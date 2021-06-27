@@ -6,7 +6,7 @@ public class SynchronizedExchangerMain {
 
         SynchronizedExchanger synchronizedExchanger = new SynchronizedExchanger();
 
-        Thread thread1 = new Thread(
+        Thread setterThread = new Thread(
             new Runnable() {
                 @Override
                 public void run() {
@@ -17,7 +17,7 @@ public class SynchronizedExchangerMain {
             }
         );
 
-        Thread thread2 = new Thread(
+        Thread getterThread = new Thread(
             new Runnable() {
                 @Override
                 public void run() {
@@ -28,7 +28,7 @@ public class SynchronizedExchangerMain {
             }
         );
 
-        thread1.start();
-        thread2.start();
+        setterThread.start();
+        getterThread.start();
     }
 }
